@@ -42,7 +42,7 @@ button {
   border-radius: 0.4rem;
   border: none;
   font-weight: 400;
-  min-width: 6.25rem;
+  min-width: 7.5rem;
   background-color: var(--dark-color);
   color: inherit;
   border: 0.0625rem solid var(--ligh-color);
