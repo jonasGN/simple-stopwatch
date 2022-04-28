@@ -61,16 +61,16 @@ function disableButton(element) {
 }
 
 function updateTimer() {
-  const radix = 10;
-  const seconds = timerController.time.seconds;
-  const minutes = timerController.time.minutes;
-  const hours = timerController.time.hours;
+  time.innerHTML = formatedTime();
+}
 
-  const secondsTemplate = `${seconds < radix ? `0${seconds}` : seconds}`;
-  const minutesTemplate = `${minutes < radix ? `0${minutes}` : minutes}`;
-  const hoursTemplate = `${hours < radix ? `0${hours}` : hours}`;
+function formatedTime() {
+  const data = timerController.time;
+  const timeOf = (value) => `${value < 10 ? `0${value}` : value}`;
 
-  time.innerHTML = `${hoursTemplate}:${minutesTemplate}:${secondsTemplate}`;
+  return `
+    ${timeOf(data.hours)}:${timeOf(data.minutes)}:${timeOf(data.seconds)}
+  `;
 }
 
 if (time && startButton && pauseButton) {
